@@ -150,8 +150,8 @@ li a{
     left : 20%;
     top: var(--heading-pos);
     width : max(60%, 500px);
-    animation-name: "slidein1";
-    animation-duration: 3s;
+    animation: "slidein1" 3s; 
+    -webkit-animation: "slidein1" 3s; 
     z-index: 3;
 }
 /* a.headbox1{
@@ -193,8 +193,8 @@ li a{
     left : 15%;
     top: var(--heading-pos);
     width : 70%;
-    animation-name: "slidein2";
-    animation-duration: 3s; 
+    animation: "slidein2" 3s;
+    -webkit-animation: "slidein2" 3s;
     z-index: 3;
 }
 @keyframes slidein2 {
@@ -226,13 +226,10 @@ li a{
     height:max-content;
     width: max-content;
     left: 3vw; top: var(--faq-offset); 
-    animation-name: "float_anim";
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+    animation: "float_anim" 2s infinite alternate ease-in-out;
+    -webkit-animation: "float_anim" 2s infinite alternate ease-in-out;
     box-sizing: border-box;
-    text-shadow: 5px 5px 1px black;
+    text-shadow: 2px 2px 1px var(--grey);
 }
 @keyframes float_anim{
     from{
@@ -354,6 +351,7 @@ li a{
     filter: blur(6px) brightness(70%);
     transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%));
     animation: "rotate_anim" 100s infinite linear; 
+    -webkit-animation: "rotate_anim" 100s infinite linear; 
     z-index: 2;
     width: 40%;
 }
@@ -384,5 +382,5 @@ li a{
     max-width: 100%;
     height: calc(var(--faqminheight) - 5vh);
     float:right;
-    transform: translateY(-4vh);
+    transform: translateY(-2vh);
 }
