@@ -1,0 +1,388 @@
+@font-face {
+    font-family: "BoldMenu";
+    src: url('Fonts/Merriweather/Merriweather-Black.ttf');
+}
+@font-face {
+    font-family: "MenuItems";
+    src: url("Fonts/Nunito/static/Nunito-Medium.ttf");
+}
+@font-face{
+    font-family: "TitleBold";
+    src: url("Fonts/Merriweather/Merriweather-Bold.ttf");
+}
+@font-face {
+    font-family: "FAQs";
+    src: url("Fonts/Roboto/Roboto-Regular.ttf");
+}
+:root{
+    --c1 : #950740;
+    --c2 : #e16259;
+    --c3 : #0d1117;
+    --c3-shadow: #161b22;
+    --c4 : #6f2232;
+    --c5 : #4e4e50;
+    --text1 : #fffefc;
+    --bg_2: #fffefc;
+    --heading-pos : 40%;
+    --box1-height: 100vh;
+    --faq-offset: 3vw;
+    --grey : #666665;
+    --accent1 : #e16259;
+    --accent1-dark:#be5643;
+    --accent2: #28a0d3;
+    --navbarheight : 6vh;
+    --faqminheight : 20vh;
+    /* --darkaccent1 ; */
+}
+*{
+    padding : 0 0 0 0; 
+    margin : 0 0 0 0;
+}
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    height: max-content;
+}
+body{
+    background-color:#fffefc;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: max-content;
+    width: max-content;
+}
+
+.navbar{
+    border-bottom: 20px var(--c2);
+    z-index: 10;
+    position: fixed;
+    width: 100vw;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    height: var(--navbarheight);
+    background-color: var(--c3-shadow);
+    justify-content: center;
+    border-bottom: 3px solid var(--c2);
+}
+.menuitem{
+    height:100%;
+    align-items: center;
+    /* text-align: center; */
+    /* position: relative; */
+    /* margin : 2vh 0 0 0; */
+}
+a.menu{
+    display:inline-block;
+    position: relative;
+    font-family: "MenuItems";
+    font-size: 2.3rem;
+    /* font-weight: bold; */
+    padding : 0 1.8vw;  
+    text-align:center;
+    line-height: var(--navbarheight);
+    border-radius: 2px;
+    transition: color 0.2s ease 0s , padding 1s ease 0s, letter-spacing 0.6s ease 0s;
+    text-decoration: none;
+    height: 100%;   
+    box-sizing:border-box;
+    margin: 0 2vw;
+    color:var(--text1);  
+}
+a.menu:link{
+    color:var(--text1);
+}
+a.menu:visited{
+    color:var(--text1);
+}
+a.menu:hover{
+    color:var(--c2);
+    /* background-color: var(--c2); */
+    letter-spacing: 0.3em;
+}
+a.menu:active{
+    color:var(--text1);
+    color:var(--text1);
+    /* padding: 1vw 1.5vw; */
+    background-color: var(--c2);
+    letter-spacing: 0.1em;
+}
+li{
+    display: inline-block;
+    background-color: var(--c2);
+    border-radius: 5px;
+    width: 10vw;
+    
+    /* left : 28vw; */
+    /* padding : 1vw; */
+}
+li a{
+    display: inline-block;
+    text-align: center;
+    font-family: 'MenuItems';
+    font-size: 3rem;
+    height: 40px;
+    width: fit-content;
+    
+}
+
+.box1{
+    background-color: var(--c3);
+    /* background-image: radial-gradient(ellipse, var(--c3), var(--c3-shadow)); */
+    width: 100vw; 
+    height: var(--box1-height);
+}
+.headboxback {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--darkaccent1);
+    width: 80vw;
+    height: 80vh;
+    left: 10vw;
+    top: 15vh;
+    border-radius: 2vw;
+}
+.headbox1{
+    font-family: 'BoldMenu';
+    font-size: 3em;
+    text-align: center;
+    color: var(--c2);
+    position: relative;
+    left : 20%;
+    top: var(--heading-pos);
+    width : max(60%, 500px);
+    animation-name: "slidein1";
+    animation-duration: 3s;
+    z-index: 3;
+}
+/* a.headbox1{
+    font-family: 'BoldMenu';
+    font-size: 5em;
+    text-align: center;
+    color: var(--c2);
+    position: relative;
+    left : 20%;
+    top: var(--heading-pos);
+    width : max(60%, 500px);
+    animation-name: "slidein1";
+    animation-duration: 3s;
+} */
+
+@keyframes slidein1 {
+    from{
+        opacity: 0;
+        size : 5em;
+        top: calc(var(--heading-pos) + 10%);
+    }
+    50%{
+        opacity: 100;
+        size: 5em;
+        top: calc(var(--heading-pos) + 10%);
+    }
+    to{
+        opacity:100;
+        size:3em;
+        top: var(--heading-pos);
+    }
+}
+.headbox2{
+    font-family: 'BoldMenu';
+    font-size: 8em;
+    text-align: center;
+    color: var(--text1);
+    position: relative;
+    left : 15%;
+    top: var(--heading-pos);
+    width : 70%;
+    animation-name: "slidein2";
+    animation-duration: 3s; 
+    z-index: 3;
+}
+@keyframes slidein2 {
+    from{
+        opacity:0; 
+    }
+    65%{
+        opacity:0;
+    }
+    to{
+        opacity:100;
+    }
+}
+
+.box2{
+    background-color: var(--bg_2);
+    height: max-content;
+    box-sizing: content-box;
+    padding-bottom: 10vh;
+}
+
+.heading1{
+    font-family: 'BoldMenu';
+    font-size: 7em;
+    text-align: center;
+    color: var(--accent1);
+    position: relative;
+    left : 5%;
+    height:max-content;
+    width: max-content;
+    left: 3vw; top: var(--faq-offset); 
+    animation-name: "float_anim";
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    box-sizing: border-box;
+    text-shadow: 5px 5px 1px black;
+}
+@keyframes float_anim{
+    from{
+        top:3vw;
+    }
+    to{
+        top: 3.6vw;
+    }
+}
+.faq1{
+    position: relative;
+    font-family: "FAQs";
+    font-size: 2rem;  
+    color: var(--text1);
+    top: calc(var(--faq-offset) + 0vw);
+    left: 3vw;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    width: 90vw;
+    /* border-radius: 1vw; */
+    border-bottom: 2px solid var(--c2);
+    border-top: 2px solid var(--c2);
+    margin: 3vw 0;
+    /* overflow-y:scroll; */
+    height: max-content;
+    min-height: var(--faqminheight);
+    background-color: var(--bg_2);
+}
+.faq1 a{
+    text-align:left;
+    transition: color 0.2s ease 0s , padding 1s ease 0s, letter-spacing 0.6s ease 0s;
+    text-decoration: none;  
+    /* box-sizing:border-box; */
+    /* margin: 0 2vw; */
+    padding-top: 2vh;
+    color:var(--grey);  
+    width: 60%;
+}
+.faq1 a:hover{
+    color: var(--accent2);
+    /* text-shadow: 1px 2px 2px black; */
+}
+.faq1 a:active{
+    color: var(--accent2);
+}
+.faq1 span{
+    font-family:"BoldMenu" ; 
+    font-size: 3rem;
+    font-weight: bold;
+    color:var(--c3);
+}
+
+.faq2{
+    position: relative;
+    font-family: "FAQs";
+    font-size: 2rem;  
+    color: var(--text1);
+    position: relative;
+    top: calc(var(--faq-offset) + 0vw);
+    transform: translateX(calc(100vw - 100% - 3vw));
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    width: 90vw;
+    /* border-radius: 1vw; */
+    border-bottom: 2px solid var(--c2);
+    border-top: 2px solid var(--c2);
+    margin: 3vw 0;
+    /* overflow-y:scroll; */
+    height: max-content;
+    /* max-height: 25vh; */
+    background-color: var(--bg_2);
+}
+.faq2 a{
+    text-align:right;
+    transition: color 0.2s ease 0s , padding 1s ease 0s, letter-spacing 0.6s ease 0s;
+    text-decoration: none;  
+    /* box-sizing:border-box; */
+    /* margin: 0 2vw; */
+    color:var(--grey);  
+    width: 80vw;
+}
+.faq2 a:hover{
+    color: var(--accent2);
+    /* text-shadow: 1px 2px 2px black; */
+}
+.faq2 a:active{
+    color: var(--accent2);
+}
+.faq2 span{
+    font-family:"BoldMenu" ; 
+    font-size: 3rem;
+    font-weight: bold;
+    color:var(--c3);
+}
+
+.virusimage{
+    filter: blur(2px) brightness(45%) hue-rotate(29deg);
+    z-index: 2;
+    width:35%;
+    position: absolute;
+    top : 12vh; 
+    left: 2.3vw;
+    max-width: 100%;
+    height: auto;
+}
+.mask{
+    /* opacity: 50%; */
+    filter: blur(2px) brightness(45%) hue-rotate(29deg);
+    z-index: 2;
+    width:35%;
+    position: absolute;
+    bottom : 2vh; 
+    right: 2.3vw;
+    max-width: 100%;
+    height: auto;
+}
+.bgvirus{
+    position: absolute;
+    filter: blur(6px) brightness(70%);
+    transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%));
+    animation: "rotate_anim" 100s infinite linear; 
+    z-index: 2;
+    width: 40%;
+}
+@keyframes rotate_anim{
+    form{
+        transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotateZ(0deg);
+    }
+    to{
+        transform: translateX(calc(50vw - 50%)) translateY(calc(50vh - 50%)) rotateZ(360deg);
+    }
+}
+.faqimg1{
+    width: auto;
+    max-width: 100%;
+    height: calc(var(--faqminheight) - 5vh);
+    float:right;
+    transform: translateY(-2vh);
+}
+.faqimg2{
+    width: auto;
+    max-width: 100%;
+    height: calc(var(--faqminheight) - 5vh);
+    float:right;
+    transform: translateY(-1vh);
+}
+.faqimg3{
+    width: auto;
+    max-width: 100%;
+    height: calc(var(--faqminheight) - 5vh);
+    float:right;
+    transform: translateY(-4vh);
+}
