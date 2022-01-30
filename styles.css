@@ -20,7 +20,7 @@
 }
 @font-face {
     font-family: "footeritems";
-    src: url(Fonts/bookendswithaccents-font/BookendsBookendswithAccents-EBO4.otf);
+    src: url(Fonts/Barlow_Condensed/BarlowCondensed-Light.ttf);
 }
 :root{
     --c1 : #950740;
@@ -410,6 +410,7 @@ li a{
     left:5vw;
     width: 90vw;
     margin-bottom: 10vh;
+    padding-bottom: 10vh;
 }
 .tip1{
     color:var(--c3-shadow);
@@ -456,7 +457,7 @@ li a{
     background-image: linear-gradient(to top, var(--c5), var(--c3-shadow));
     justify-content: center;
     border-top: 3px solid var(--c2);
-    margin-top: 30vh;
+    margin-top: 15vh;
     filter: drop-shadow(4px 0, black);
 }
 .footeritem{
@@ -501,4 +502,29 @@ li a{
     /* padding: 1vw 1.5vw; */
     background-color: var(--c2);
     letter-spacing: 0.1em;
+}
+.player{
+    width:100vw;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    position:relative;
+    /* margin-top: 5vh; */
+    padding-top: 14vh;
+    padding-bottom: 14vh;
+    background-color: var(--bg_2);
+    transition: background-color 0.9s ease-in-out;
+    transition: border-top 0.3s ease-in-out;
+    transition: border-bottom 0.1s ease-in-out;
+}
+.player:hover{
+    background-color: var(--text2);
+    border-top:3px groove var(--accent2);
+    border-bottom: 3px groove var(--accent2);
+}
+iframe{
+    position: relative;
+    padding : 1vh; 
+    border: 2px solid var(--accent1);
+    margin:auto;
 }
